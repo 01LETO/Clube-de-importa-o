@@ -3,8 +3,7 @@
    'desconhecido' NUNCA e 'aceito'; o padrao e nao rastrear; valor estranho, versao
    velha ou cookie corrompido significam "pergunte de novo", nunca "pode rastrear".
 
-   HOJE ESTE SITE NAO CARREGA NENHUM RASTREAMENTO. Quando entrar pixel ou analytics,
-   ele so pode carregar assim:
+   Rastreamento (hoje, so assets/medicao.js) so pode carregar assim:
      window.consentimento.quandoAceito(function () { ...carrega o script... });
 
    A faixa e criada por este arquivo, nao vem no HTML: sem JS nao ha rastreamento, logo
@@ -14,7 +13,7 @@
 
   var NOME = 'ii_consentimento';
   // Mudou o que pedimos permissao para fazer? Suba a versao: a pessoa e perguntada de novo.
-  var VERSAO = '1';
+  var VERSAO = '2';
   var VALIDADE = 60 * 60 * 24 * 180;   // 180 dias: consentimento envelhece
 
   function interpretar(cru) {
@@ -94,7 +93,7 @@
     faixa.setAttribute('role', 'region');
     faixa.setAttribute('aria-label', 'Aviso de cookies');
     faixa.innerHTML =
-      '<p class="cookies-texto">Com a sua permissão, usamos cookies de medição para entender de onde você veio e melhorar o site. Sem permissão, nada de medição é carregado.</p>' +
+      '<p class="cookies-texto">Com a sua permissão, usamos cookies da Meta (Facebook e Instagram) para medir de qual anúncio você veio e os cliques na inscrição. Sem permissão, nada de medição é carregado.</p>' +
       '<div class="cookies-acoes">' +
         '<button type="button" class="cookies-botao" data-escolha="recusado">Recusar</button>' +
         '<button type="button" class="cookies-botao" data-escolha="aceito">Aceitar</button>' +
