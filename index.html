@@ -486,6 +486,10 @@
       .js .cena:not(.cena--estatica):not(.cena--sem3d) .rolar-fio { height: 28px; }
       .js .cena:not(.cena--estatica):not(.cena--sem3d) .hero-acao small { display: none; }
     }
+    /* Fora do celular o cabecalho chega a 116px: o texto comeca abaixo dele */
+    @media (min-width: 40rem) and (max-width: 63.99rem), (min-width: 40rem) and (max-aspect-ratio: 11/10) {
+      .js .cena:not(.cena--estatica):not(.cena--sem3d) .cena-hero { padding-top: 8.5rem; }
+    }
 
     /* "A Mentoria" entra por cima do fim da cena, com os cantos arredondados */
     .painel {
